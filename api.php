@@ -6,8 +6,6 @@ if (!array_key_exists('HTTP_ORIGIN', $_SERVER)) {
 
 try {
     $API = new MyAPI($_REQUEST['request'], $_SERVER['HTTP_ORIGIN']);
-	//echo $_SERVER['PHP_SELF'];
-	//echo $_REQUEST['request'];
     echo $API->processAPI();
 } catch (Exception $e) {
 	echo json_encode(Array('error' => $e->getMessage()));

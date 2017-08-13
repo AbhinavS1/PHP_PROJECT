@@ -25,10 +25,6 @@ abstract class API
      */
      protected $file = Null;
 
-    /**
-     * Constructor: __construct
-     * Allow for CORS, assemble and pre-process the data
-     */
     public function __construct($request) {
         header("Access-Control-Allow-Orgin: *");
         header("Access-Control-Allow-Methods: *");
@@ -73,7 +69,6 @@ abstract class API
     }
 
     private function _response($data, $status = 200) {
-        //header("HTTP/1.1 " . $status . " " . $this->_requestStatus($status));
         return json_encode($data);
 		return $data;
     }
